@@ -16,6 +16,7 @@ public class MemberApp {
 //        MemberService memberService = appConfig.memberService();
 //        MemberService memberService = new MemberServiceImpl();
 
+        // AppConfig 를 스프링방식으로 사용
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
 

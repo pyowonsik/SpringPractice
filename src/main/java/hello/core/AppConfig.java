@@ -18,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
+    // 구현체를 사용하지 않기 위해 인터페이스를 사용해서 주입
     @Bean
      public MemberService memberService(){
          return new MemberServiceImpl(MemoryMemberRepository());

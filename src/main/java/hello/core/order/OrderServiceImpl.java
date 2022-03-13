@@ -6,7 +6,7 @@ import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
 
 
-// AppConfig 덕분에 구햔체에 의존하지 않고 인터페이스에만 의존 (실행 역할)
+// AppConfig 덕분에 구햔체에 의존하지 않고 인터페이스에만 의존  (실행 역할)
 public class OrderServiceImpl implements OrderService{
 
 
