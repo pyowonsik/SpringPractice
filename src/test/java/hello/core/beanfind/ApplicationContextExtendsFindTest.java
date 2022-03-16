@@ -43,19 +43,21 @@ public class ApplicationContextExtendsFindTest {
     @DisplayName("부모타입으로 조회시 자식이 둘이상 있으면 '빈이름' 을 지정한다")
     void findBeanByParentTypeBeanName(){
 
+
         DiscountPolicy rateDiscountPolicy = ac.getBean("rateDiscountPolicy", DiscountPolicy.class);
         assertThat(rateDiscountPolicy).isInstanceOf(RateDiscountPolicy.class);
 
     }
 
     @Test
+    @DisplayName("부모타입 접근이 아닌 직접 접근법")
     void findBeanBySubType(){
         DiscountPolicy bean = ac.getBean(RateDiscountPolicy.class);
         assertThat(bean).isInstanceOf(RateDiscountPolicy.class);
     }
 
     @Test
-    @DisplayName("부모 타입으로 모두 조회하기") // getBeansOfType
+    @DisplayName("부모 타입으로 모두 조회하기") // getBeansOfType - 여러개를 조회
     void findAllBeanByParentType(){
 
         Map<String, DiscountPolicy> beansOfType = ac.getBeansOfType(DiscountPolicy.class);  // DiscountPolicy 의 모든 클래스
