@@ -3,6 +3,8 @@ import hello.core.AppConfig;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MemberServiceTest {
 
@@ -16,6 +18,7 @@ public class MemberServiceTest {
 
     @Test
     void join(){
+
 
         // given
         Member member = new Member(1L,"memberA",Grade.VIP);
