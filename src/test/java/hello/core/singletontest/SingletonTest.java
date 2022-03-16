@@ -1,4 +1,4 @@
-package hello.core.singltontest;
+package hello.core.singletontest;
 
 
 import hello.core.AppConfig;
