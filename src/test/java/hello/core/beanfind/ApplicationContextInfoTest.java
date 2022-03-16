@@ -33,6 +33,7 @@ public class ApplicationContextInfoTest {
 
 
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+
         for (String beanDefinitionName : beanDefinitionNames) {
 
             BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
