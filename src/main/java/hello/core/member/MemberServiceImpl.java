@@ -9,6 +9,7 @@ public class MemberServiceImpl implements  MemberService{
     // AppConfig 때문에 구현체(MemoryMemberRepository)에 의존하지 않고 인터페이스에(MemberRepository)만 의존 (실행 역할)
     private final MemberRepository memberRepository;
 
+
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -24,4 +25,10 @@ public class MemberServiceImpl implements  MemberService{
         return memberRepository.findById(memberId);
 
     }
+
+    //테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
 }

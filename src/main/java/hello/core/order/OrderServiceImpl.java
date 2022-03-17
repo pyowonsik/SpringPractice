@@ -34,6 +34,9 @@ public class OrderServiceImpl implements OrderService{
 
 
 
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 
 
 }

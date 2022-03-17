@@ -21,21 +21,25 @@ public class AppConfig {
     // 인터페이스만 사용하기 위해 구현체를 리턴 받는다.
     @Bean
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(MemoryMemberRepository());
     }
 
     @Bean
     public MemberRepository MemoryMemberRepository(){
+        System.out.println("call AppConfig.MemoryMemberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(MemoryMemberRepository(),discountPolicy());
     }
 
     @Bean
     public DiscountPolicy discountPolicy(){
+        System.out.println("call AppConfig.discountPolicy");
         // return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }
