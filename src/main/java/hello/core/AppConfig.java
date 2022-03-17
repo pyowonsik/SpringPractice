@@ -15,6 +15,8 @@ import org.springframework.context.annotation.Configuration;
 // 사요영역인 Impl을 변경하지 않아도 됨.
 // appConfig.xml 과 비교
 @Configuration
+// 애플리케이션 컨택스트는 @Configuration이 붙은 클래스들을 설정 정보로 등록, @Bean이 붙은 메소드의 이름으로 빈 목록 생성
+// 스프링 컨테이너로써 싱글톤 패턴을 허용
 public class AppConfig {
 
 
@@ -22,11 +24,13 @@ public class AppConfig {
     @Bean
     public MemberService memberService(){
         System.out.println("call AppConfig.memberService");
-        return new MemberServiceImpl(MemoryMemberRepository());
+        return new MemberServiceImpl(memberRepository());
+        // MemberServiceImpl 의 매개변수는 interface이기때문에  memberRepository의 리턴 값을 구현체로 하는
+        // 의존성 주입을 사용했다.
     }
 
     @Bean
-    public MemberRepository MemoryMemberRepository(){
+    public MemberRepository memberRepository(){
         System.out.println("call AppConfig.MemoryMemberRepository");
         return new MemoryMemberRepository();
     }
@@ -34,7 +38,7 @@ public class AppConfig {
     @Bean
     public OrderService orderService(){
         System.out.println("call AppConfig.orderService");
-        return new OrderServiceImpl(MemoryMemberRepository(),discountPolicy());
+        return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
 
     @Bean

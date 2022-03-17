@@ -1,5 +1,7 @@
 package hello.core.singleton;
 
+// 싱글톤을 사용하는 이유
+//
 public class SingletonService {
 
     private static final SingletonService instance = new SingletonService();

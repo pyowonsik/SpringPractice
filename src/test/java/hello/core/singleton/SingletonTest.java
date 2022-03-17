@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+
 public class SingletonTest {
 
     @Test
@@ -40,6 +41,10 @@ public class SingletonTest {
 
     }
 
+    // 애플리케이션 컨텍스트에 의해 등록된 빈은 기본적으로 싱글톤으로 관리된다.
+    // 즉, 스프링에 여러 번 빈을 요청하더라도 매번 *동일한 객체* 를 돌려준다는 것이다.
+    // 애플리케이션 컨텍스트가 싱글톤으로 빈을 관리하는 이유는 대규모 트래픽을 처리할 수 있도록 하기 위함이다.
+    // 스프링 싱글톤은 자바 싱글톤의 단점들을 보완한다.
 
     @Test
     @DisplayName("스프링 컨테이너와 싱글톤")   // 스프링 컨테이너는 싱글톤 패턴을 포함한다.
