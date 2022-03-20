@@ -51,7 +51,7 @@ public class SingletonTest {
     // ac.getBean == 스프링 컨테이너 방식 == singleton 패턴의 장점을 가져온다.
 
     @Test
-    @DisplayName("스프링 컨테이너와 싱글톤")
+    @DisplayName("스프링 컨테이너를 이용한 싱글톤 패턴")
     void springContainer() {
 
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);

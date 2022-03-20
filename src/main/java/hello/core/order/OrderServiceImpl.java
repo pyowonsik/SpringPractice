@@ -4,8 +4,11 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 
+@Component
 // AppConfig 덕분에 구햔체에 의존하지 않고 인터페이스에만 의존  (실행 역할)
 public class OrderServiceImpl implements OrderService{
 
@@ -18,7 +21,7 @@ public class OrderServiceImpl implements OrderService{
     // DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
 
-
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;

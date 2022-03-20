@@ -16,7 +16,8 @@ import org.springframework.context.annotation.Configuration;
 // appConfig.xml 과 비교
 @Configuration
 // 애플리케이션 컨택스트는 @Configuration이 붙은 클래스들을 설정 정보로 등록, @Bean이 붙은 메소드의 이름으로 빈 목록 생성
-// 스프링 컨테이너로써 싱글톤 패턴을 허용
+// @Configuration 이 없어지면 싱글톤 패턴이 깨지게 된다.
+// ApplicationContext 와 연결 한다.
 public class AppConfig {
 
 
